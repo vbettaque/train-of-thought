@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cj5mk65ai13mb"]
+[gd_scene load_steps=18 format=3 uid="uid://cj5mk65ai13mb"]
 
 [ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_7x76l"]
 [ext_resource type="Texture2D" uid="uid://dhdx3w7t1x4nr" path="res://placeholder/p1.png" id="2_astmm"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://crx65vopyydy6" path="res://placeholder/guard0.png" id="6_7sth4"]
 [ext_resource type="Script" path="res://scenes/npc.gd" id="6_j74xt"]
 [ext_resource type="Texture2D" uid="uid://7uhllqxcjyb0" path="res://placeholder/guard1.png" id="7_wu8o4"]
+[ext_resource type="Script" path="res://scenes/item.gd" id="9_s5dfn"]
+[ext_resource type="Texture2D" uid="uid://wjm1e8t7udcf" path="res://placeholder/ticket.png" id="9_wvj27"]
+[ext_resource type="Texture2D" uid="uid://bivue7vuspk8v" path="res://placeholder/ticket2.png" id="10_g1gop"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_51o6p"]
 animations = [{
@@ -56,6 +59,23 @@ animations = [{
 radius = 161.0
 height = 476.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_60yk3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wvj27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g1gop")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4wnam"]
+radius = 41.0488
+
 [node name="World" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -83,7 +103,6 @@ shape = SubResource("CapsuleShape2D_uftvq")
 
 [node name="npc" type="Area2D" parent="."]
 script = ExtResource("6_j74xt")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
 position = Vector2(1042, 372)
@@ -96,15 +115,32 @@ position = Vector2(1042, 389)
 shape = SubResource("CapsuleShape2D_m72n0")
 
 [node name="Dialog" type="Polygon2D" parent="npc"]
-position = Vector2(962, 72)
+position = Vector2(990.481, 47.041)
+scale = Vector2(1.22785, 1.28689)
 polygon = PackedVector2Array(-4, 87, -37, 55, -121, 56, -125, -25, 191, -35, 186, 51, 7, 56)
+
+[node name="Item" type="Area2D" parent="npc/Dialog"]
+position = Vector2(-23.1959, 19.3949)
+scale = Vector2(0.814433, 0.77707)
+script = ExtResource("9_s5dfn")
+
+[node name="Ticket" type="AnimatedSprite2D" parent="npc/Dialog/Item"]
+position = Vector2(161, -42)
+scale = Vector2(2.25, 2.21667)
+sprite_frames = SubResource("SpriteFrames_60yk3")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Dialog/Item"]
+position = Vector2(162, -41)
+shape = SubResource("CircleShape2D_4wnam")
 
 [node name="Label" type="Label" parent="npc/Dialog"]
 offset_left = -97.0
 offset_top = -19.0
-offset_right = 172.0
+offset_right = 195.0
 offset_bottom = 61.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 44
-text = "Hi there"
+theme_override_font_sizes/font_size = 20
+text = "You need a ______
+to get on"
 horizontal_alignment = 1
