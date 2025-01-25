@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://bk6kwnmqhpd0g"]
+
+[ext_resource type="Texture2D" uid="uid://br6rihpkh07" path="res://icon.svg" id="1_c3hsv"]
+[ext_resource type="Script" path="res://entities/items/item.gd" id="2_htl2o"]
+[ext_resource type="Script" path="res://entities/items/item_slot.gd" id="3_denjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0b3km"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p3nl"]
+radius = 62.63
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s3t1"]
+size = Vector2(128, 128)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hwmal"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0cu3s"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dujrb"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4g04c"]
+normal = Vector2(0, 1)
+
+[node name="TestBubble" type="Node2D"]
+
+[node name="Bubble" type="ColorRect" parent="."]
+offset_left = 49.0
+offset_top = 85.0
+offset_right = 1030.0
+offset_bottom = 698.0
+mouse_filter = 1
+
+[node name="ItemSlot" type="Area2D" parent="."]
+position = Vector2(200, 216)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_denjy")
+color = Color(0.352941, 0.352941, 0.352941, 0.352941)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemSlot"]
+shape = SubResource("RectangleShape2D_0b3km")
+
+[node name="Item" type="RigidBody2D" parent="."]
+position = Vector2(952, 456)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_htl2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource("CircleShape2D_7p3nl")
+
+[node name="SelectionArea" type="Area2D" parent="Item"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item/SelectionArea"]
+visible = false
+shape = SubResource("RectangleShape2D_8s3t1")
+
+[node name="Sprite2D" type="Sprite2D" parent="Item"]
+texture = ExtResource("1_c3hsv")
+
+[node name="ScreenBoundary" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="BottomCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(960, 1080)
+shape = SubResource("WorldBoundaryShape2D_hwmal")
+
+[node name="LeftCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(0, 540)
+shape = SubResource("WorldBoundaryShape2D_0cu3s")
+
+[node name="RightCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(1920, 540)
+shape = SubResource("WorldBoundaryShape2D_dujrb")
+
+[node name="TopCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(960, 0)
+shape = SubResource("WorldBoundaryShape2D_4g04c")
