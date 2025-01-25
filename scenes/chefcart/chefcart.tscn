@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=3 uid="uid://dylxdv51p28kx"]
+
+[ext_resource type="Texture2D" uid="uid://b2bxf8uqju3tv" path="res://placeholder/checfcart.webp" id="1_18of4"]
+[ext_resource type="Script" path="res://scenes/chefcart/level.gd" id="1_dn6ye"]
+[ext_resource type="Texture2D" uid="uid://s3q5w450u8f6" path="res://placeholder/player.png" id="3_hw12b"]
+[ext_resource type="Script" path="res://scenes/chefcart/player.gd" id="3_jc86h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvvun"]
+radius = 93.2631
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ggpx"]
+radius = 95.0368
+
+[node name="chefcart" type="Node2D"]
+script = ExtResource("1_dn6ye")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(961, 543.25)
+scale = Vector2(1.64615, 1.32864)
+texture = ExtResource("1_18of4")
+metadata/_edit_group_ = true
+
+[node name="patch" type="Polygon2D" parent="background"]
+polygon = PackedVector2Array(-516.355, 36.6916, -427.056, 44.2181, -423.411, 202.274, -510.888, 208.296)
+
+[node name="characters" type="Node2D" parent="."]
+
+[node name="chickenguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/chickenguy"]
+position = Vector2(370, 741)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="plantguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/plantguy"]
+position = Vector2(601, 737)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="dinerguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/dinerguy"]
+position = Vector2(923, 774)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="coldguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/coldguy"]
+position = Vector2(1195, 767)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="chefguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/chefguy"]
+position = Vector2(1509, 729)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="guardguy" type="Area2D" parent="characters"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/guardguy"]
+position = Vector2(1784, 748)
+shape = SubResource("CircleShape2D_qvvun")
+
+[node name="Player" type="Area2D" parent="characters"]
+script = ExtResource("3_jc86h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="characters/Player"]
+position = Vector2(116, 743)
+shape = SubResource("CircleShape2D_0ggpx")
+
+[node name="Playersprite" type="Sprite2D" parent="characters/Player"]
+position = Vector2(127, 758)
+texture = ExtResource("3_hw12b")
+
+[node name="dialogues" type="Node2D" parent="."]
+
+[node name="guarddialogue" type="Node2D" parent="dialogues"]
+
+[node name="dialogue" type="Polygon2D" parent="dialogues/guarddialogue"]
+position = Vector2(-4, 102)
+color = Color(0, 0.462745, 0.627451, 1)
+polygon = PackedVector2Array(1714, 451, 1686, 382, 1602, 379, 1599, 275, 1884, 256, 1885, 374, 1723, 374)
+metadata/_edit_group_ = true
+
+[node name="text" type="Label" parent="dialogues/guarddialogue/dialogue"]
+offset_left = 1620.0
+offset_top = 283.0
+offset_right = 1854.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 30
+text = "Only VIPs allowed"
