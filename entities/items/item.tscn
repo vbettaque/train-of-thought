@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://byiur15lgy6qt"]
+
+[ext_resource type="Script" path="res://entities/items/item.gd" id="1_ncq5r"]
+[ext_resource type="Texture2D" uid="uid://br6rihpkh07" path="res://icon.svg" id="2_qmwby"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p3nl"]
+radius = 62.63
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8s3t1"]
+size = Vector2(128, 128)
+
+[node name="Item" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ncq5r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7p3nl")
+
+[node name="SelectionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectionArea"]
+shape = SubResource("RectangleShape2D_8s3t1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qmwby")

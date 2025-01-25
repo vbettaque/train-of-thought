@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpwj2d387d104"]
+
+[ext_resource type="Theme" uid="uid://cwe4mg61nharw" path="res://assets/theme.tres" id="1_0nkj7"]
+[ext_resource type="PackedScene" uid="uid://biye7olleue7b" path="res://entities/items/item_slot.tscn" id="2_fa0is"]
+
+[node name="ExampleBubble" type="PanelContainer"]
+offset_right = 952.0
+offset_bottom = 432.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("1_0nkj7")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Line1" type="RichTextLabel" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme = ExtResource("1_0nkj7")
+bbcode_enabled = true
+text = "I am sorry, but I can't let "
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line2" type="RichTextLabel" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme = ExtResource("1_0nkj7")
+bbcode_enabled = true
+text = "you in here, this cart is for"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line3" type="RichTextLabel" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme = ExtResource("1_0nkj7")
+bbcode_enabled = true
+text = "our elite members. You"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line4a" type="RichTextLabel" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme = ExtResource("1_0nkj7")
+bbcode_enabled = true
+text = "need a"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="ItemSlot" parent="HFlowContainer" instance=ExtResource("2_fa0is")]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Line4b" type="RichTextLabel" parent="HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+theme = ExtResource("1_0nkj7")
+bbcode_enabled = true
+text = "to pass."
+fit_content = true
+autowrap_mode = 0

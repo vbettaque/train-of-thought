@@ -1,15 +1,18 @@
+@tool
+
 class_name ItemSlot
-extends Area2D
+extends Control
 
 @export var color: Color = Color(Color.DARK_GRAY, 0.5)
-@export_range(0, 64, 1, "suffix:px") var large_margin: float = 16
+@export_range(0, 64, 1, "suffix:px") var large_margin: float = 8
 
 var enlarged: bool = false:
 	set(new):
 		enlarged = new or item
 		queue_redraw()
 
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var slot_area: Area2D = $SlotArea
+@onready var collision_shape_2d: CollisionShape2D = $SlotArea/CollisionShape2D
 var slot_shape: RectangleShape2D
 
 var item: Item
@@ -17,15 +20,22 @@ var item_parent: Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exit)
-	self.input_event.connect(_on_input_event)
 	slot_shape = collision_shape_2d.shape
+	
+	resized.connect(_on_resize)
+	slot_shape.changed.connect(queue_redraw)
+	slot_area.body_entered.connect(_on_body_entered)
+	slot_area.body_exited.connect(_on_body_exit)
+	slot_area.input_event.connect(_on_input_event)
 	queue_redraw()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _on_resize() -> void:
+	collision_shape_2d.position = size / 2
+	slot_shape.size = size
 	
 func _on_input_event(viewport: Node, event:InputEvent, shape_idx:int) -> void:
 	if event is InputEventMouseButton:
@@ -36,11 +46,12 @@ func _on_input_event(viewport: Node, event:InputEvent, shape_idx:int) -> void:
 	
 func _draw() -> void:
 	var margin: float = large_margin if enlarged else 0.0
-		
-	var size = slot_shape.size + Vector2(margin, margin)
-	var rect := Rect2(-size/2, size)
+	var margin_vector = Vector2(margin, margin)
+	var rect_size = self.size + 2 * margin_vector
+	var rect_pos = - margin_vector
+	var rect := Rect2(rect_pos, rect_size)
 	draw_rect(rect, color)
-
+ 
 func _on_body_entered(body: Node2D):
 	if body is not Item: return
 	var item := body as Item
@@ -60,7 +71,7 @@ func insert_item(item: Item):
 	self.item = item
 	item_parent = item.get_parent()
 	item.reparent(self)
-	item.position = Vector2.ZERO
+	item.position = size / 2
 	item.set_physics_process(false)
 	item.freeze = true
 	

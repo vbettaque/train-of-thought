@@ -1,16 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://ebcafifmn18i"]
+[gd_scene load_steps=8 format=3 uid="uid://ebcafifmn18i"]
 
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="1_x3y67"]
+[ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="2_lie4p"]
+[ext_resource type="PackedScene" uid="uid://bpwj2d387d104" path="res://scenes/bubbles/example_bubble.tscn" id="3_vuffn"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6yq7f"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4kgdo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58xcs"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_euul2"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_oqac5"]
+normal = Vector2(0, 1)
 
 [node name="TestLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_x3y67")]
 position = Vector2(144, 832)
 
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(0, 1088)
+[node name="ExampleBubble" parent="." instance=ExtResource("3_vuffn")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-shape = SubResource("WorldBoundaryShape2D_6yq7f")
+[node name="Item" parent="." instance=ExtResource("2_lie4p")]
+position = Vector2(1112, 720)
+
+[node name="ScreenBoundary" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="BottomCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(960, 1080)
+shape = SubResource("WorldBoundaryShape2D_4kgdo")
+
+[node name="LeftCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(0, 540)
+shape = SubResource("WorldBoundaryShape2D_58xcs")
+
+[node name="RightCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(1920, 540)
+shape = SubResource("WorldBoundaryShape2D_euul2")
+
+[node name="TopCollision" type="CollisionShape2D" parent="ScreenBoundary"]
+position = Vector2(960, 0)
+shape = SubResource("WorldBoundaryShape2D_oqac5")
