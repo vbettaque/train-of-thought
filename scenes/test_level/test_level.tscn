@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ebcafifmn18i"]
+[gd_scene load_steps=9 format=3 uid="uid://dst7tr44ahyll"]
 
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="1_x3y67"]
 [ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="2_lie4p"]
 [ext_resource type="PackedScene" uid="uid://bpwj2d387d104" path="res://scenes/bubbles/bubble.tscn" id="3_vuffn"]
-[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/world/ticket_sprite.tres" id="4_3erv5"]
+[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/test_level/ticket_sprite.tres" id="4_3oh38"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4kgdo"]
 
@@ -28,7 +28,7 @@ position = Vector2(1112, 720)
 
 [node name="Sprite" parent="Item" index="2"]
 scale = Vector2(3.5, 3.5)
-sprite_frames = ExtResource("4_3erv5")
+sprite_frames = ExtResource("4_3oh38")
 autoplay = "default"
 
 [node name="ScreenBoundary" type="StaticBody2D" parent="."]

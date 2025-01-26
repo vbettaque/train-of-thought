@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sfqfrjjep0n"
-path="res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"
+uid="uid://ccyk6so5x1r6d"
+path="res://.godot/imported/conductor-3.png-8c69cf65d79d8211d77f62659cc56584.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/background/parallax-bg-4.png"
-dest_files=["res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"]
+source_file="res://images/characters/conductor/conductor-3.png"
+dest_files=["res://.godot/imported/conductor-3.png-8c69cf65d79d8211d77f62659cc56584.ctex"]
 
 [params]
 

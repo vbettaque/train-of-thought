@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sfqfrjjep0n"
-path="res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"
+uid="uid://dnc3gw7c8bu5t"
+path="res://.godot/imported/hungry-1.png-b1cba67134ee1a05cc1abd50d3dcace7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/background/parallax-bg-4.png"
-dest_files=["res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"]
+source_file="res://images/characters/hungry/hungry-1.png"
+dest_files=["res://.godot/imported/hungry-1.png-b1cba67134ee1a05cc1abd50d3dcace7.ctex"]
 
 [params]
 

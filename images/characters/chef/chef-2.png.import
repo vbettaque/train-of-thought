@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sfqfrjjep0n"
-path="res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"
+uid="uid://dftwdxugfoypr"
+path="res://.godot/imported/chef-2.png-18df157d7a9d4a2b30053433b1a903a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/background/parallax-bg-4.png"
-dest_files=["res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"]
+source_file="res://images/characters/chef/chef-2.png"
+dest_files=["res://.godot/imported/chef-2.png-18df157d7a9d4a2b30053433b1a903a1.ctex"]
 
 [params]
 

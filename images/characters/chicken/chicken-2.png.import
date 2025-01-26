@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3sfqfrjjep0n"
-path="res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"
+uid="uid://clx77ysi7b60g"
+path="res://.godot/imported/chicken-2.png-55abd5adb5d02aa405849524e75d9dab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/background/parallax-bg-4.png"
-dest_files=["res://.godot/imported/parallax-bg-4.png-496bbce17f23bef462502d71bf3b3e9b.ctex"]
+source_file="res://images/characters/chicken/chicken-2.png"
+dest_files=["res://.godot/imported/chicken-2.png-55abd5adb5d02aa405849524e75d9dab.ctex"]
 
 [params]
 

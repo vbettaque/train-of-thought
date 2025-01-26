@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://boylf122j3eqf"]
 
-[ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_7x76l"]
-[ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="2_sfmfj"]
-[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="3_57cj2"]
+[ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_1xoog"]
+[ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="2_88q4b"]
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="3_p1dev"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eqa1p"]
 
@@ -40,10 +40,10 @@ shape = SubResource("WorldBoundaryShape2D_bv5ir")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_7x76l")
+texture = ExtResource("1_1xoog")
 
-[node name="Player" parent="." instance=ExtResource("2_sfmfj")]
+[node name="Player" parent="." instance=ExtResource("2_88q4b")]
 position = Vector2(184, 752)
 
-[node name="NPC" parent="." instance=ExtResource("3_57cj2")]
+[node name="NPC" parent="." instance=ExtResource("3_p1dev")]
 position = Vector2(1408, 712)

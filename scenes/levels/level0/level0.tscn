@@ -1,0 +1,120 @@
+[gd_scene load_steps=15 format=3 uid="uid://cvq2aat8v46cr"]
+
+[ext_resource type="Texture2D" uid="uid://dk8ifxkni0nv6" path="res://images/background/parallax-bg-1.png" id="1_hryst"]
+[ext_resource type="Script" path="res://scenes/levels/level0/level_0.gd" id="1_o1p8t"]
+[ext_resource type="Texture2D" uid="uid://3most3cwt8t0" path="res://images/background/parallax-bg-2.png" id="2_t6vxq"]
+[ext_resource type="Texture2D" uid="uid://bu4ea4f8r02k1" path="res://images/background/parallax-bg-3.png" id="3_tjcik"]
+[ext_resource type="Texture2D" uid="uid://c3sfqfrjjep0n" path="res://images/background/parallax-bg-4.png" id="4_npusv"]
+[ext_resource type="Texture2D" uid="uid://136odgo6koij" path="res://images/background/parallax-bg-5.png" id="5_ht8to"]
+[ext_resource type="Texture2D" uid="uid://jvcc6mux8xtc" path="res://images/train/train.png" id="7_fq0vh"]
+[ext_resource type="Texture2D" uid="uid://cgpp2axyhuuu" path="res://images/train/train-left.png" id="7_scnnx"]
+[ext_resource type="Texture2D" uid="uid://b1c3hkr4rilij" path="res://images/train/train-right.png" id="9_oarlh"]
+[ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="10_ywoct"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fk3e5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0te51"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qas1o"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_d6blb"]
+normal = Vector2(0, 1)
+
+[node name="Level0" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o1p8t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="LandscapeParallax" type="Node2D" parent="."]
+
+[node name="SkyParallax" type="Parallax2D" parent="LandscapeParallax"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="SkySprite" type="Sprite2D" parent="LandscapeParallax/SkyParallax"]
+texture = ExtResource("1_hryst")
+centered = false
+
+[node name="StarsSprite" type="Sprite2D" parent="LandscapeParallax/SkyParallax"]
+texture = ExtResource("2_t6vxq")
+centered = false
+
+[node name="CloudsParallax" type="Parallax2D" parent="LandscapeParallax"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-10, 0)
+
+[node name="CloudsSprite" type="Sprite2D" parent="LandscapeParallax/CloudsParallax"]
+texture = ExtResource("3_tjcik")
+centered = false
+
+[node name="HillsParallax" type="Parallax2D" parent="LandscapeParallax"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-50, 0)
+
+[node name="HillsSprite" type="Sprite2D" parent="LandscapeParallax/HillsParallax"]
+texture = ExtResource("4_npusv")
+centered = false
+
+[node name="TreesParallax" type="Parallax2D" parent="LandscapeParallax"]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-2000, 0)
+
+[node name="TreesSprite" type="Sprite2D" parent="LandscapeParallax/TreesParallax"]
+texture = ExtResource("5_ht8to")
+centered = false
+
+[node name="Train" type="Node2D" parent="."]
+
+[node name="TrainBackground" type="Node2D" parent="Train"]
+
+[node name="TrainLeftSprite" type="Sprite2D" parent="Train/TrainBackground"]
+texture = ExtResource("7_scnnx")
+centered = false
+
+[node name="TrainMiddle1Sprite" type="Sprite2D" parent="Train/TrainBackground"]
+position = Vector2(536, 0)
+texture = ExtResource("7_fq0vh")
+centered = false
+
+[node name="TrainMiddle2Sprite" type="Sprite2D" parent="Train/TrainBackground"]
+position = Vector2(2456, 0)
+texture = ExtResource("7_fq0vh")
+centered = false
+
+[node name="TrainRightSprite" type="Sprite2D" parent="Train/TrainBackground"]
+position = Vector2(4380, 0)
+texture = ExtResource("9_oarlh")
+centered = false
+
+[node name="TrainBoundary" type="StaticBody2D" parent="Train"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="BottomCollision" type="CollisionShape2D" parent="Train/TrainBoundary"]
+position = Vector2(960, 896)
+shape = SubResource("WorldBoundaryShape2D_fk3e5")
+
+[node name="LeftCollision" type="CollisionShape2D" parent="Train/TrainBoundary"]
+position = Vector2(96, 540)
+shape = SubResource("WorldBoundaryShape2D_0te51")
+
+[node name="RightCollision" type="CollisionShape2D" parent="Train/TrainBoundary"]
+position = Vector2(4816, 540)
+shape = SubResource("WorldBoundaryShape2D_qas1o")
+
+[node name="TopCollision" type="CollisionShape2D" parent="Train/TrainBoundary"]
+position = Vector2(960, 312)
+shape = SubResource("WorldBoundaryShape2D_d6blb")
+
+[node name="Player" parent="." instance=ExtResource("10_ywoct")]
+position = Vector2(312, 704)
+metadata/_edit_lock_ = true

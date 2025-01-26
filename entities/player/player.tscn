@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://brmpfdacmroaf"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_n44ko"]
-[ext_resource type="SpriteFrames" uid="uid://b0mp00j4rfm2e" path="res://entities/player/sprite_frames.tres" id="2_7rav7"]
+[ext_resource type="SpriteFrames" uid="uid://b0mp00j4rfm2e" path="res://entities/player/player_sprite.tres" id="2_7rav7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uftvq"]
-radius = 100.0
-height = 390.0
+radius = 80.0
+height = 320.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 9
@@ -13,7 +13,7 @@ collision_mask = 9
 script = ExtResource("1_n44ko")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(5.42, 5.67143)
+scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("2_7rav7")
 animation = &"idle"
 autoplay = "idle"
