@@ -21,7 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o1p8t")
 
-[node name="LandscapeParallax" parent="." instance=ExtResource("2_57y0l")]
+[node name="Landscape" parent="." instance=ExtResource("2_57y0l")]
 
 [node name="TrainCar" parent="." instance=ExtResource("7_udkuy")]
 position = Vector2(0, 137)
