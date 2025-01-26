@@ -15,14 +15,19 @@ var enlarged: bool = false:
 @onready var collision_shape_2d: CollisionShape2D = $SlotArea/CollisionShape2D
 var slot_shape: RectangleShape2D
 
-var item: Item
-var item_parent: Node2D
+@export var item: Item:
+	set(new_item):
+		if item: remove_item()
+		item = new_item
+		if item: insert_item(item)
+		
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slot_shape = collision_shape_2d.shape
 	
 	resized.connect(_on_resize)
+	
 	slot_shape.changed.connect(queue_redraw)
 	slot_area.body_entered.connect(_on_body_entered)
 	slot_area.body_exited.connect(_on_body_exit)
@@ -42,7 +47,7 @@ func _on_input_event(viewport: Node, event:InputEvent, shape_idx:int) -> void:
 		var mouse_event: InputEventMouseButton = event
 		if mouse_event.button_index != MOUSE_BUTTON_LEFT: return
 		if mouse_event.pressed and item:
-			remove_item()
+			item = null
 	
 func _draw() -> void:
 	var margin: float = large_margin if enlarged else 0.0
@@ -65,20 +70,16 @@ func _on_body_exit(body: Node2D):
 	enlarged = false
 	
 func _on_item_released(item: Item):
-	insert_item(item)
+	self.item = item
 
 func insert_item(item: Item):
-	self.item = item
-	item_parent = item.get_parent()
 	item.reparent(self)
 	item.position = size / 2
 	item.set_physics_process(false)
 	item.freeze = true
 	
 func remove_item():
-	item.reparent(item_parent)
+	item.reparent(get_tree().root)
 	item.set_physics_process(true)
 	item.freeze = false
 	item.grab()
-	self.item = null
-	item_parent = null

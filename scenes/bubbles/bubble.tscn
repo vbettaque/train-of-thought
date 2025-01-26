@@ -3,73 +3,66 @@
 [ext_resource type="Theme" uid="uid://cwe4mg61nharw" path="res://assets/theme.tres" id="1_0nkj7"]
 [ext_resource type="PackedScene" uid="uid://biye7olleue7b" path="res://entities/items/item_slot.tscn" id="2_fa0is"]
 
-[node name="ExampleBubble" type="PanelContainer"]
-offset_right = 952.0
-offset_bottom = 432.0
+[node name="Bubble" type="Polygon2D"]
+polygon = PackedVector2Array(0, 0, 776, 21, 750, 289, 627, 303, 649, 423, 500, 314, 16, 271)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 720.0
+offset_bottom = 291.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-mouse_filter = 1
 theme = ExtResource("1_0nkj7")
 
-[node name="HFlowContainer" type="HFlowContainer" parent="."]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Line1" type="RichTextLabel" parent="HFlowContainer"]
+[node name="Line1" type="RichTextLabel" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme = ExtResource("1_0nkj7")
 bbcode_enabled = true
-text = "I am sorry, but I can't let "
+text = "I am sorry, but I can't let you in here,"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Line2" type="RichTextLabel" parent="HFlowContainer"]
+[node name="Line2" type="RichTextLabel" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme = ExtResource("1_0nkj7")
 bbcode_enabled = true
-text = "you in here, this cart is for"
+text = "this cart is for out elite members."
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Line3" type="RichTextLabel" parent="HFlowContainer"]
+[node name="Line3a" type="RichTextLabel" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme = ExtResource("1_0nkj7")
 bbcode_enabled = true
-text = "our elite members. You"
+text = "You need a"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Line4a" type="RichTextLabel" parent="HFlowContainer"]
+[node name="ItemSlot" parent="MarginContainer/HFlowContainer" instance=ExtResource("2_fa0is")]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Line3b" type="RichTextLabel" parent="MarginContainer/HFlowContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 4
 theme = ExtResource("1_0nkj7")
 bbcode_enabled = true
-text = "need a"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="ItemSlot" parent="HFlowContainer" instance=ExtResource("2_fa0is")]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="Line4b" type="RichTextLabel" parent="HFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 4
-theme = ExtResource("1_0nkj7")
-bbcode_enabled = true
-text = "to pass."
+text = "to get inside."
 fit_content = true
 autowrap_mode = 0

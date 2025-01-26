@@ -1,13 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://boylf122j3eqf"]
+[gd_scene load_steps=15 format=3 uid="uid://boylf122j3eqf"]
 
 [ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_7x76l"]
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="2_sfmfj"]
 [ext_resource type="Texture2D" uid="uid://crx65vopyydy6" path="res://placeholder/guard0.png" id="6_7sth4"]
-[ext_resource type="Script" path="res://scenes/npc.gd" id="6_j74xt"]
+[ext_resource type="Script" path="res://scenes/world/npc.gd" id="6_j74xt"]
+[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/world/ticket_sprite.tres" id="7_qry1l"]
 [ext_resource type="Texture2D" uid="uid://7uhllqxcjyb0" path="res://placeholder/guard1.png" id="7_wu8o4"]
-[ext_resource type="Script" path="res://scenes/item.gd" id="9_s5dfn"]
-[ext_resource type="Texture2D" uid="uid://wjm1e8t7udcf" path="res://placeholder/ticket.png" id="9_wvj27"]
-[ext_resource type="Texture2D" uid="uid://bivue7vuspk8v" path="res://placeholder/ticket2.png" id="10_g1gop"]
+[ext_resource type="PackedScene" uid="uid://bpwj2d387d104" path="res://scenes/bubbles/bubble.tscn" id="9_7ir2a"]
+[ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="9_re4e7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eqa1p"]
 
@@ -37,23 +37,6 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m72n0"]
 radius = 161.0
 height = 476.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_60yk3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_wvj27")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_g1gop")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4wnam"]
-radius = 41.0488
 
 [node name="World" type="Node2D"]
 
@@ -85,45 +68,32 @@ texture = ExtResource("1_7x76l")
 [node name="Player" parent="." instance=ExtResource("2_sfmfj")]
 position = Vector2(184, 752)
 
-[node name="npc" type="Area2D" parent="."]
+[node name="NPC" type="Area2D" parent="."]
 position = Vector2(1160, 704)
 script = ExtResource("6_j74xt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC"]
 scale = Vector2(6.3, 6.64286)
 sprite_frames = SubResource("SpriteFrames_fkoyo")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
 shape = SubResource("CapsuleShape2D_m72n0")
 
-[node name="Dialog" type="Polygon2D" parent="npc"]
-position = Vector2(-200, -344)
-scale = Vector2(1.22785, 1.28689)
-polygon = PackedVector2Array(-4, 87, -37, 55, -121, 56, -125, -25, 191, -35, 186, 51, 7, 56)
+[node name="DialogBubble" parent="NPC" instance=ExtResource("9_7ir2a")]
+position = Vector2(-752, -576)
 
-[node name="Item" type="Area2D" parent="npc/Dialog"]
-position = Vector2(-23.1959, 19.3949)
-scale = Vector2(0.814433, 0.77707)
-script = ExtResource("9_s5dfn")
+[node name="ItemSlot" parent="NPC/DialogBubble/MarginContainer/HFlowContainer" index="3" node_paths=PackedStringArray("item")]
+item = NodePath("Item")
 
-[node name="Ticket" type="AnimatedSprite2D" parent="npc/Dialog/Item"]
-position = Vector2(161, -42)
-scale = Vector2(2.25, 2.21667)
-sprite_frames = SubResource("SpriteFrames_60yk3")
+[node name="Item" parent="NPC/DialogBubble/MarginContainer/HFlowContainer/ItemSlot" index="1" instance=ExtResource("9_re4e7")]
+position = Vector2(64, 64)
+freeze = true
+
+[node name="Sprite" parent="NPC/DialogBubble/MarginContainer/HFlowContainer/ItemSlot/Item" index="2"]
+scale = Vector2(3.5, 3.5)
+sprite_frames = ExtResource("7_qry1l")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Dialog/Item"]
-position = Vector2(162, -41)
-shape = SubResource("CircleShape2D_4wnam")
-
-[node name="Label" type="Label" parent="npc/Dialog"]
-offset_left = -97.0
-offset_top = -19.0
-offset_right = 195.0
-offset_bottom = 61.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 20
-text = "You need a ______
-to get on"
-horizontal_alignment = 1
+[editable path="NPC/DialogBubble"]
+[editable path="NPC/DialogBubble/MarginContainer/HFlowContainer/ItemSlot/Item"]
