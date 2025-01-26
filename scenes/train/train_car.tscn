@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccligdfdquarq"]
+[gd_scene load_steps=10 format=3 uid="uid://ccligdfdquarq"]
 
 [ext_resource type="Texture2D" uid="uid://cgpp2axyhuuu" path="res://scenes/train/train-left.png" id="1_ahsjn"]
 [ext_resource type="Texture2D" uid="uid://jvcc6mux8xtc" path="res://scenes/train/train.png" id="2_2ra86"]
 [ext_resource type="Texture2D" uid="uid://b1c3hkr4rilij" path="res://scenes/train/train-right.png" id="3_r6bmr"]
 [ext_resource type="SpriteFrames" uid="uid://cqhvwdh4iskaf" path="res://scenes/train/wheels/wheels_sprite.tres" id="4_7nehd"]
+[ext_resource type="AudioStream" uid="uid://drw0i67m3r1a3" path="res://scenes/train/train.wav" id="5_hfqgb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fk3e5"]
 
@@ -74,3 +75,7 @@ shape = SubResource("WorldBoundaryShape2D_qas1o")
 [node name="TopCollision" type="CollisionShape2D" parent="TrainBoundary"]
 position = Vector2(952, 135)
 shape = SubResource("WorldBoundaryShape2D_d6blb")
+
+[node name="TrainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hfqgb")
+autoplay = true
