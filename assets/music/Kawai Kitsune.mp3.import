@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dj1r5b2jtycdt"
+path="res://.godot/imported/Kawai Kitsune.mp3-5345baf97a492a8502b4ad2bb0e7682f.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Kawai Kitsune.mp3"
+dest_files=["res://.godot/imported/Kawai Kitsune.mp3-5345baf97a492a8502b4ad2bb0e7682f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=3.0
+bpm=0.0
+beat_count=0
+bar_beats=4

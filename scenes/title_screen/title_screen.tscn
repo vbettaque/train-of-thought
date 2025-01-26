@@ -60,7 +60,8 @@ size_flags_vertical = 8
 theme = ExtResource("1_7c283")
 bbcode_enabled = true
 text = "[color=white][font_size=24]A[/font_size] [font_size=48]2025 Global Game Jam[/font_size] [font_size=24]game by[/font_size]:
-Valérie Bettaque, Vladimir Manoylo & Erin Wang"
+Valérie Bettaque, Vladimir Manoylo & Erin Wang
+[font_size=12] \"Kawai Kitsune\" Kevin MacLeod (incompetech.com), Licensed under Creative Commons: By Attribution 4.0 License (http://creativecommons.org/licenses/by/4.0/)"
 fit_content = true
 autowrap_mode = 0
 

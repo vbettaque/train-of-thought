@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccuxeuklo1ert"]
+
+[ext_resource type="AudioStream" uid="uid://dj1r5b2jtycdt" path="res://assets/music/Kawai Kitsune.mp3" id="1_qp746"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_qp746")
+autoplay = true
