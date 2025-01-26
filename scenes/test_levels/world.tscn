@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://boylf122j3eqf"]
 
-[ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_1xoog"]
+[ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://assets/placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_1xoog"]
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="2_88q4b"]
 [ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="3_p1dev"]
 [ext_resource type="PackedScene" uid="uid://bpwj2d387d104" path="res://entities/bubbles/bubble.tscn" id="4_i47yi"]
 [ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="5_0brv2"]
-[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/test_level/ticket_sprite.tres" id="6_qeukd"]
+[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/test_levels/ticket_sprite.tres" id="6_qeukd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eqa1p"]
 

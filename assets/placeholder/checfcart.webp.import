@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7uhllqxcjyb0"
-path="res://.godot/imported/guard1.png-f7b30c9516d2db66fe2e8e34bd5c7bc5.ctex"
+uid="uid://b2bxf8uqju3tv"
+path="res://.godot/imported/checfcart.webp-5da187dc83b2da4359407d98e44c07d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/guard1.png"
-dest_files=["res://.godot/imported/guard1.png-f7b30c9516d2db66fe2e8e34bd5c7bc5.ctex"]
+source_file="res://assets/placeholder/checfcart.webp"
+dest_files=["res://.godot/imported/checfcart.webp-5da187dc83b2da4359407d98e44c07d4.ctex"]
 
 [params]
 

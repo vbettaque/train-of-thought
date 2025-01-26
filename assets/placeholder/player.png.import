@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd2enwq4koi7e"
-path="res://.godot/imported/rain.png-22581aea404b4f7b34cbd273df79e9c3.ctex"
+uid="uid://s3q5w450u8f6"
+path="res://.godot/imported/player.png-b2240a8b7c3cfc2fcb94361e36a25c26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/rain.png"
-dest_files=["res://.godot/imported/rain.png-22581aea404b4f7b34cbd273df79e9c3.ctex"]
+source_file="res://assets/placeholder/player.png"
+dest_files=["res://.godot/imported/player.png-b2240a8b7c3cfc2fcb94361e36a25c26.ctex"]
 
 [params]
 

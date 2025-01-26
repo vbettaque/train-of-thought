@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://b355vlnhwgqhr"]
 
-[ext_resource type="Texture2D" uid="uid://wjm1e8t7udcf" path="res://placeholder/ticket.png" id="1_na87e"]
-[ext_resource type="Texture2D" uid="uid://bivue7vuspk8v" path="res://placeholder/ticket2.png" id="2_y822k"]
+[ext_resource type="Texture2D" uid="uid://wjm1e8t7udcf" path="res://assets/placeholder/ticket.png" id="1_na87e"]
+[ext_resource type="Texture2D" uid="uid://bivue7vuspk8v" path="res://assets/placeholder/ticket2.png" id="2_y822k"]
 
 [resource]
 animations = [{

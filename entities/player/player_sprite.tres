@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b87pkkyoofdfv" path="res://entities/player/player-1.png" id="1_cwjx8"]
 [ext_resource type="Texture2D" uid="uid://dijpq1t4hhfq6" path="res://entities/player/player-2.png" id="2_0ef7u"]
 [ext_resource type="Texture2D" uid="uid://dlpm1k5tsq0iq" path="res://entities/player/player-3.png" id="3_kx4g2"]
-[ext_resource type="Texture2D" uid="uid://dnm3odf05mirv" path="res://placeholder/p0.png" id="4_o0e0e"]
-[ext_resource type="Texture2D" uid="uid://dvtn2kmpdldt8" path="res://placeholder/p2.png" id="5_nqfhe"]
+[ext_resource type="Texture2D" uid="uid://dnm3odf05mirv" path="res://assets/placeholder/p0.png" id="4_o0e0e"]
+[ext_resource type="Texture2D" uid="uid://dvtn2kmpdldt8" path="res://assets/placeholder/p2.png" id="5_nqfhe"]
 
 [resource]
 animations = [{

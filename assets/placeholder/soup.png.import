@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1j12joik6a40"
-path="res://.godot/imported/2025-01-25 16_13_31-First car - get on the train_.png-bd83b7afdb7e25818e5cd850daf582cc.ctex"
+uid="uid://cm4heg23yfnlm"
+path="res://.godot/imported/soup.png-65b83b4b215b2c49faac329645fc19ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/2025-01-25 16_13_31-First car - get on the train_.png"
-dest_files=["res://.godot/imported/2025-01-25 16_13_31-First car - get on the train_.png-bd83b7afdb7e25818e5cd850daf582cc.ctex"]
+source_file="res://assets/placeholder/soup.png"
+dest_files=["res://.godot/imported/soup.png-65b83b4b215b2c49faac329645fc19ca.ctex"]
 
 [params]
 

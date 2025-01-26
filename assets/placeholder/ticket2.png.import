@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2bxf8uqju3tv"
-path="res://.godot/imported/checfcart.webp-7ab1236c68d7679d6f06c1c4ee7ec016.ctex"
+uid="uid://bivue7vuspk8v"
+path="res://.godot/imported/ticket2.png-cb1bfabb756aea5c2f8356ac5dfa776e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/checfcart.webp"
-dest_files=["res://.godot/imported/checfcart.webp-7ab1236c68d7679d6f06c1c4ee7ec016.ctex"]
+source_file="res://assets/placeholder/ticket2.png"
+dest_files=["res://.godot/imported/ticket2.png-cb1bfabb756aea5c2f8356ac5dfa776e.ctex"]
 
 [params]
 

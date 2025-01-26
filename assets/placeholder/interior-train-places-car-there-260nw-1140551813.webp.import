@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bivue7vuspk8v"
-path="res://.godot/imported/ticket2.png-84e800b7550157bce1e50807b82962c2.ctex"
+uid="uid://d3hvklr5meecl"
+path="res://.godot/imported/interior-train-places-car-there-260nw-1140551813.webp-5748826cd4aa33d93e53f59b88c33226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://placeholder/ticket2.png"
-dest_files=["res://.godot/imported/ticket2.png-84e800b7550157bce1e50807b82962c2.ctex"]
+source_file="res://assets/placeholder/interior-train-places-car-there-260nw-1140551813.webp"
+dest_files=["res://.godot/imported/interior-train-places-car-there-260nw-1140551813.webp-5748826cd4aa33d93e53f59b88c33226.ctex"]
 
 [params]
 
