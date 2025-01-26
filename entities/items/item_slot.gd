@@ -8,7 +8,7 @@ extends Control
 
 var enlarged: bool = false:
 	set(new):
-		enlarged = new or item
+		enlarged = new
 		queue_redraw()
 
 @onready var slot_area: Area2D = $SlotArea
@@ -29,6 +29,8 @@ func _ready() -> void:
 	resized.connect(_on_resize)
 	
 	slot_shape.changed.connect(queue_redraw)
+	slot_area.mouse_entered.connect(_on_mouse_entered)
+	slot_area.mouse_exited.connect(_on_mouse_exited)
 	slot_area.body_entered.connect(_on_body_entered)
 	slot_area.body_exited.connect(_on_body_exit)
 	slot_area.input_event.connect(_on_input_event)
@@ -42,6 +44,12 @@ func _on_resize() -> void:
 	collision_shape_2d.position = size / 2
 	slot_shape.size = size
 	
+func _on_mouse_entered() -> void:
+	enlarged = true
+	
+func _on_mouse_exited() -> void:
+	enlarged = false
+
 func _on_input_event(viewport: Node, event:InputEvent, shape_idx:int) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event: InputEventMouseButton = event
@@ -61,13 +69,11 @@ func _on_body_entered(body: Node2D):
 	if body is not Item: return
 	var item := body as Item
 	item.released.connect(_on_item_released)
-	enlarged = true
 
 func _on_body_exit(body: Node2D):
 	if body is not Item: return
 	var item := body as Item
 	item.released.disconnect(_on_item_released)
-	enlarged = false
 	
 func _on_item_released(item: Item):
 	self.item = item
