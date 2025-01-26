@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvq2aat8v46cr"]
+[gd_scene load_steps=14 format=3 uid="uid://cvq2aat8v46cr"]
 
 [ext_resource type="Script" path="res://scenes/levels/level0/level_0.gd" id="1_o1p8t"]
 [ext_resource type="PackedScene" uid="uid://dnn43v4fdscgt" path="res://scenes/landscape/landscape.tscn" id="2_57y0l"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://7tjiolel8q3a" path="res://entities/npcs/gardener/gardener.tscn" id="10_kcjrq"]
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="10_ywoct"]
 [ext_resource type="PackedScene" uid="uid://b01ai7i2kbveq" path="res://entities/npcs/hungry/hungry.tscn" id="11_cieq8"]
+[ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="12_0856c"]
+[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/test_levels/ticket_sprite.tres" id="13_ptfhi"]
 
 [node name="Level0" type="Control"]
 layout_mode = 3
@@ -19,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_o1p8t")
 
 [node name="Landscape" parent="." instance=ExtResource("2_57y0l")]
@@ -57,3 +60,12 @@ metadata/_edit_lock_ = true
 limit_bottom = 1080
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+
+[node name="Item" parent="." instance=ExtResource("12_0856c")]
+position = Vector2(632, 640)
+
+[node name="Sprite" parent="Item" index="2"]
+scale = Vector2(3.5, 3.5)
+sprite_frames = ExtResource("13_ptfhi")
+
+[editable path="Item"]
