@@ -26,6 +26,29 @@ script = ExtResource("1_o1p8t")
 [node name="TrainCar" parent="." instance=ExtResource("7_udkuy")]
 position = Vector2(0, 137)
 
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="Bouncer" parent="NPCs" instance=ExtResource("5_ks3pi")]
+position = Vector2(880, 632)
+
+[node name="Chef" parent="NPCs" instance=ExtResource("6_7poqa")]
+position = Vector2(1224, 624)
+
+[node name="Chicken" parent="NPCs" instance=ExtResource("7_6jt5c")]
+position = Vector2(1536, 648)
+
+[node name="Cold" parent="NPCs" instance=ExtResource("8_ijo25")]
+position = Vector2(1832, 632)
+
+[node name="Conductor" parent="NPCs" instance=ExtResource("9_4ruvy")]
+position = Vector2(2112, 624)
+
+[node name="Gardener" parent="NPCs" instance=ExtResource("10_kcjrq")]
+position = Vector2(2376, 632)
+
+[node name="Hungry" parent="NPCs" instance=ExtResource("11_cieq8")]
+position = Vector2(2656, 632)
+
 [node name="Player" parent="." instance=ExtResource("10_ywoct")]
 position = Vector2(312, 704)
 metadata/_edit_lock_ = true
@@ -34,24 +57,3 @@ metadata/_edit_lock_ = true
 limit_bottom = 1080
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
-
-[node name="Bouncer" parent="." instance=ExtResource("5_ks3pi")]
-position = Vector2(880, 632)
-
-[node name="Chef" parent="." instance=ExtResource("6_7poqa")]
-position = Vector2(1224, 624)
-
-[node name="Chicken" parent="." instance=ExtResource("7_6jt5c")]
-position = Vector2(1536, 648)
-
-[node name="Cold" parent="." instance=ExtResource("8_ijo25")]
-position = Vector2(1832, 632)
-
-[node name="Conductor" parent="." instance=ExtResource("9_4ruvy")]
-position = Vector2(2112, 624)
-
-[node name="Gardener" parent="." instance=ExtResource("10_kcjrq")]
-position = Vector2(2376, 632)
-
-[node name="Hungry" parent="." instance=ExtResource("11_cieq8")]
-position = Vector2(2656, 632)
