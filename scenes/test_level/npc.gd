@@ -1,20 +1,32 @@
+class_name NPC
 extends Area2D
 
-@onready var dialog_bubble: Polygon2D = $DialogBubble
+@export var dialog_bubble: Polygon2D
+@onready var sprite: AnimatedSprite2D = $Sprite
 
+@export var bobbing_strength: float = 8
+@export var bobbing_speed: float = 5
+@export var bobbing_offset: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dialog_bubble.visible = false
+	bobbing_offset = 2 * randf() * PI
+	if dialog_bubble:
+		dialog_bubble.visible = false
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	
+	
+func _process(delta: float) -> void:
+	sprite.position.y = bobbing_strength \
+		* sin(bobbing_speed * (Time.get_ticks_msec() / 1000.) + bobbing_offset)
+	
 
 func _on_body_entered(body: Node2D):
-	if body is Player:
+	if body is Player and dialog_bubble:
 		dialog_bubble.visible = true
 	
 
 func _on_body_exited(body: Node2D):
-	if body is Player:
+	if body is Player and dialog_bubble:
 		dialog_bubble.visible = false

@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://6vn2vomnws8j"]
+
+[ext_resource type="Texture2D" uid="uid://bgpdims3h2u6x" path="res://entities/npcs/chicken/chicken-1.png" id="1_vel8c"]
+[ext_resource type="Texture2D" uid="uid://clx77ysi7b60g" path="res://entities/npcs/chicken/chicken-2.png" id="2_useh8"]
+[ext_resource type="Texture2D" uid="uid://b3yl4s3hpaqm8" path="res://entities/npcs/chicken/chicken-3.png" id="3_dusqx"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vel8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_useh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dusqx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

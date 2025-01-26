@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvq2aat8v46cr"]
+[gd_scene load_steps=12 format=3 uid="uid://cvq2aat8v46cr"]
 
 [ext_resource type="Script" path="res://scenes/levels/level0/level_0.gd" id="1_o1p8t"]
 [ext_resource type="PackedScene" uid="uid://dnn43v4fdscgt" path="res://scenes/landscape/landscape.tscn" id="2_57y0l"]
+[ext_resource type="PackedScene" uid="uid://b1acmp7jgfnbh" path="res://entities/npcs/bouncer/bouncer.tscn" id="5_ks3pi"]
+[ext_resource type="PackedScene" uid="uid://ymosdebsuhrl" path="res://entities/npcs/chef/chef.tscn" id="6_7poqa"]
+[ext_resource type="PackedScene" uid="uid://cbgprtu0v20k0" path="res://entities/npcs/chicken/chicken.tscn" id="7_6jt5c"]
 [ext_resource type="PackedScene" uid="uid://ccligdfdquarq" path="res://scenes/train/train_car.tscn" id="7_udkuy"]
+[ext_resource type="PackedScene" uid="uid://b5ihphycsnfa7" path="res://entities/npcs/cold/cold.tscn" id="8_ijo25"]
+[ext_resource type="PackedScene" uid="uid://b8mvfeuktbrcj" path="res://entities/npcs/conductor/conductor.tscn" id="9_4ruvy"]
+[ext_resource type="PackedScene" uid="uid://7tjiolel8q3a" path="res://entities/npcs/gardener/gardener.tscn" id="10_kcjrq"]
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="10_ywoct"]
+[ext_resource type="PackedScene" uid="uid://b01ai7i2kbveq" path="res://entities/npcs/hungry/hungry.tscn" id="11_cieq8"]
 
 [node name="Level0" type="Control"]
 layout_mode = 3
@@ -27,3 +34,24 @@ metadata/_edit_lock_ = true
 limit_bottom = 1080
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+
+[node name="Bouncer" parent="." instance=ExtResource("5_ks3pi")]
+position = Vector2(880, 632)
+
+[node name="Chef" parent="." instance=ExtResource("6_7poqa")]
+position = Vector2(1224, 624)
+
+[node name="Chicken" parent="." instance=ExtResource("7_6jt5c")]
+position = Vector2(1536, 648)
+
+[node name="Cold" parent="." instance=ExtResource("8_ijo25")]
+position = Vector2(1832, 632)
+
+[node name="Conductor" parent="." instance=ExtResource("9_4ruvy")]
+position = Vector2(2112, 624)
+
+[node name="Gardener" parent="." instance=ExtResource("10_kcjrq")]
+position = Vector2(2376, 632)
+
+[node name="Hungry" parent="." instance=ExtResource("11_cieq8")]
+position = Vector2(2656, 632)

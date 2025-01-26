@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7tjiolel8q3a"]
+
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="1_d4ien"]
+[ext_resource type="SpriteFrames" uid="uid://drnuytfitk4v7" path="res://entities/npcs/gardener/gardener_sprite.tres" id="2_31u2j"]
+
+[node name="Gardener" instance=ExtResource("1_d4ien")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_31u2j")

@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bb0bg73eqnijr"]
+
+[ext_resource type="Texture2D" uid="uid://beytx1ejctoxu" path="res://entities/npcs/chef/chef-1.png" id="1_tejb8"]
+[ext_resource type="Texture2D" uid="uid://dftwdxugfoypr" path="res://entities/npcs/chef/chef-2.png" id="2_483su"]
+[ext_resource type="Texture2D" uid="uid://7h5npbstad51" path="res://entities/npcs/chef/chef-3.png" id="3_xhv07"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tejb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_483su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xhv07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

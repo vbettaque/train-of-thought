@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1acmp7jgfnbh"]
+
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="1_fhab3"]
+[ext_resource type="SpriteFrames" uid="uid://b06s6a2pab861" path="res://entities/npcs/bouncer/bouncer_sprite.tres" id="2_n36i4"]
+
+[node name="Bouncer" instance=ExtResource("1_fhab3")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_n36i4")

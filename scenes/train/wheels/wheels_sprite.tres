@@ -1,26 +1,26 @@
 [gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cqhvwdh4iskaf"]
 
-[ext_resource type="Texture2D" uid="uid://bosxqrg143yxm" path="res://scenes/train/wheels/train-wheels-1.png" id="1_p1ksb"]
-[ext_resource type="Texture2D" uid="uid://dk41oy3xlryht" path="res://scenes/train/wheels/train-wheels-2.png" id="2_pc3a5"]
-[ext_resource type="Texture2D" uid="uid://bic477uiufmk6" path="res://scenes/train/wheels/train-wheels-3.png" id="3_2mc2e"]
-[ext_resource type="Texture2D" uid="uid://cjw6k8ucid52r" path="res://scenes/train/wheels/train-wheels-4.png" id="4_dyles"]
+[ext_resource type="Texture2D" uid="uid://bosxqrg143yxm" path="res://scenes/train/wheels/train-wheels-1.png" id="1_vka16"]
+[ext_resource type="Texture2D" uid="uid://dk41oy3xlryht" path="res://scenes/train/wheels/train-wheels-2.png" id="2_obsyj"]
+[ext_resource type="Texture2D" uid="uid://bic477uiufmk6" path="res://scenes/train/wheels/train-wheels-3.png" id="3_5ltk7"]
+[ext_resource type="Texture2D" uid="uid://cjw6k8ucid52r" path="res://scenes/train/wheels/train-wheels-4.png" id="4_4adas"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_p1ksb")
+"texture": ExtResource("1_vka16")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_pc3a5")
+"texture": ExtResource("2_obsyj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2mc2e")
+"texture": ExtResource("3_5ltk7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_dyles")
+"texture": ExtResource("4_4adas")
 }],
 "loop": true,
 "name": &"default",
-"speed": 60.0
+"speed": 10.0
 }]

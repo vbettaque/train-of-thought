@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01ai7i2kbveq"]
+
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="1_3b41m"]
+[ext_resource type="SpriteFrames" uid="uid://dq3w6fxalp6vk" path="res://entities/npcs/hungry/hungry_sprite.tres" id="2_2qeo8"]
+
+[node name="Hungry" instance=ExtResource("1_3b41m")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_2qeo8")

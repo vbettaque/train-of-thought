@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://drnuytfitk4v7"]
+
+[ext_resource type="Texture2D" uid="uid://b8xxp0iru01ur" path="res://entities/npcs/gardener/gardener-1.png" id="1_glqbd"]
+[ext_resource type="Texture2D" uid="uid://i24wx327f71f" path="res://entities/npcs/gardener/gardener-2.png" id="2_5ox0p"]
+[ext_resource type="Texture2D" uid="uid://bny6ae8lui8n4" path="res://entities/npcs/gardener/gardener-3.png" id="3_lvctl"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_glqbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ox0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lvctl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

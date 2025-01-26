@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ymosdebsuhrl"]
+
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="1_54wqk"]
+[ext_resource type="SpriteFrames" uid="uid://bb0bg73eqnijr" path="res://entities/npcs/chef/chef_sprite.tres" id="2_uuorg"]
+
+[node name="Chef" instance=ExtResource("1_54wqk")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_uuorg")

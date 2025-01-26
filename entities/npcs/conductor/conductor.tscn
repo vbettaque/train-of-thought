@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8mvfeuktbrcj"]
+
+[ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="1_5e3al"]
+[ext_resource type="SpriteFrames" uid="uid://drr82sjtutel3" path="res://entities/npcs/conductor/conductor_sprite.tres" id="2_3lvnu"]
+
+[node name="Conductor" instance=ExtResource("1_5e3al")]
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = ExtResource("2_3lvnu")

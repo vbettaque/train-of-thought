@@ -1,8 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://boylf122j3eqf"]
+[gd_scene load_steps=11 format=3 uid="uid://boylf122j3eqf"]
 
 [ext_resource type="Texture2D" uid="uid://d3hvklr5meecl" path="res://placeholder/interior-train-places-car-there-260nw-1140551813.webp" id="1_1xoog"]
 [ext_resource type="PackedScene" uid="uid://brmpfdacmroaf" path="res://entities/player/player.tscn" id="2_88q4b"]
 [ext_resource type="PackedScene" uid="uid://cx6ui4r1s7omx" path="res://entities/npcs/npc.tscn" id="3_p1dev"]
+[ext_resource type="PackedScene" uid="uid://bpwj2d387d104" path="res://entities/bubbles/bubble.tscn" id="4_i47yi"]
+[ext_resource type="PackedScene" uid="uid://byiur15lgy6qt" path="res://entities/items/item.tscn" id="5_0brv2"]
+[ext_resource type="SpriteFrames" uid="uid://b355vlnhwgqhr" path="res://scenes/test_level/ticket_sprite.tres" id="6_qeukd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_eqa1p"]
 
@@ -45,5 +48,23 @@ texture = ExtResource("1_1xoog")
 [node name="Player" parent="." instance=ExtResource("2_88q4b")]
 position = Vector2(184, 752)
 
-[node name="NPC" parent="." instance=ExtResource("3_p1dev")]
+[node name="NPC" parent="." node_paths=PackedStringArray("dialog_bubble") instance=ExtResource("3_p1dev")]
 position = Vector2(1408, 712)
+dialog_bubble = NodePath("DialogBubble2")
+
+[node name="DialogBubble2" parent="NPC" instance=ExtResource("4_i47yi")]
+position = Vector2(-752, -576)
+
+[node name="ItemSlot" parent="NPC/DialogBubble2/MarginContainer/HFlowContainer" index="3" node_paths=PackedStringArray("item")]
+item = NodePath("Item")
+
+[node name="Item" parent="NPC/DialogBubble2/MarginContainer/HFlowContainer/ItemSlot" index="1" instance=ExtResource("5_0brv2")]
+position = Vector2(64, 64)
+freeze = true
+
+[node name="Sprite" parent="NPC/DialogBubble2/MarginContainer/HFlowContainer/ItemSlot/Item" index="2"]
+scale = Vector2(3.5, 3.5)
+sprite_frames = ExtResource("6_qeukd")
+
+[editable path="NPC/DialogBubble2"]
+[editable path="NPC/DialogBubble2/MarginContainer/HFlowContainer/ItemSlot/Item"]

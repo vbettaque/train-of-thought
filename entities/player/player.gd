@@ -6,12 +6,16 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 @export var bobbing_strength: float = 8
 @export var bobbing_speed: float = 5
+var bobbing_offset: float
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 
+func _ready() -> void:
+	bobbing_offset = 2 * randf() * PI
+
 func _process(delta: float) -> void:
 	sprite.position.y = bobbing_strength \
-		* sin(bobbing_speed * Time.get_ticks_msec() / 1000)
+		* sin(bobbing_speed * (Time.get_ticks_msec() / 1000.) + bobbing_offset)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
