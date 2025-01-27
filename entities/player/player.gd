@@ -2,13 +2,14 @@ class_name Player
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
 @export var bobbing_strength: float = 8
 @export var bobbing_speed: float = 5
 var bobbing_offset: float
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var item_slot: ItemSlot = $ItemSlot
 
 func _ready() -> void:
 	bobbing_offset = 2 * randf() * PI

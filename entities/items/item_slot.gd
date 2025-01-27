@@ -1,7 +1,10 @@
 @tool
 
 class_name ItemSlot
-extends Control
+extends Area2D
+
+signal item_inserted(Item)
+signal item_removed(Item)
 
 @export var color: Color = Color(Color.DARK_GRAY, 0.5)
 @export_range(0, 64, 1, "suffix:px") var large_margin: float = 8
@@ -11,8 +14,7 @@ var enlarged: bool = false:
 		enlarged = new
 		queue_redraw()
 
-@onready var slot_area: Area2D = $SlotArea
-@onready var collision_shape_2d: CollisionShape2D = $SlotArea/CollisionShape2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 var slot_shape: RectangleShape2D
 
 @export var item: Item:
@@ -25,24 +27,19 @@ var slot_shape: RectangleShape2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	slot_shape = collision_shape_2d.shape
-	
-	resized.connect(_on_resize)
-	
 	slot_shape.changed.connect(queue_redraw)
-	slot_area.mouse_entered.connect(_on_mouse_entered)
-	slot_area.mouse_exited.connect(_on_mouse_exited)
-	slot_area.body_entered.connect(_on_body_entered)
-	slot_area.body_exited.connect(_on_body_exit)
-	slot_area.input_event.connect(_on_input_event)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exit)
+	input_event.connect(_on_input_event)
 	queue_redraw()
+	if item:
+		insert_item(item)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func _on_resize() -> void:
-	collision_shape_2d.position = size / 2
-	slot_shape.size = size
 	
 func _on_mouse_entered() -> void:
 	enlarged = true
@@ -60,8 +57,8 @@ func _on_input_event(viewport: Node, event:InputEvent, shape_idx:int) -> void:
 func _draw() -> void:
 	var margin: float = large_margin if enlarged else 0.0
 	var margin_vector = Vector2(margin, margin)
-	var rect_size = self.size + 2 * margin_vector
-	var rect_pos = - margin_vector
+	var rect_size = slot_shape.size + 2 * margin_vector
+	var rect_pos = - rect_size / 2
 	var rect := Rect2(rect_pos, rect_size)
 	draw_rect(rect, color)
  
@@ -80,12 +77,14 @@ func _on_item_released(item: Item):
 
 func insert_item(item: Item):
 	item.reparent(self)
-	item.position = size / 2
+	item.position = Vector2.ZERO
 	item.set_physics_process(false)
 	item.freeze = true
+	item_inserted.emit(item)
 	
 func remove_item():
 	item.reparent(get_tree().root)
 	item.set_physics_process(true)
 	item.freeze = false
 	item.grab()
+	item_removed.emit(item)

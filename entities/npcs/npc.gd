@@ -12,7 +12,7 @@ extends Area2D
 func _ready() -> void:
 	bobbing_offset = 2 * randf() * PI
 	if dialog_bubble:
-		dialog_bubble.visible = false
+		remove_child.call_deferred(dialog_bubble)
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	
@@ -24,9 +24,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D):
 	if body is Player and dialog_bubble:
-		dialog_bubble.visible = true
+		add_child.call_deferred(dialog_bubble)
 	
 
 func _on_body_exited(body: Node2D):
 	if body is Player and dialog_bubble:
-		dialog_bubble.visible = false
+		remove_child.call_deferred(dialog_bubble)

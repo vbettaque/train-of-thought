@@ -1,23 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://biye7olleue7b"]
+[gd_scene load_steps=3 format=3 uid="uid://bedr454ypm213"]
 
 [ext_resource type="Script" path="res://entities/items/item_slot.gd" id="1_svmbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0b3km"]
 size = Vector2(128, 128)
 
-[node name="ItemSlot" type="Control"]
-custom_minimum_size = Vector2(128, 128)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 128.0
-offset_bottom = 128.0
-mouse_filter = 1
-script = ExtResource("1_svmbl")
-
-[node name="SlotArea" type="Area2D" parent="."]
+[node name="ItemSlot" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("1_svmbl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SlotArea"]
-position = Vector2(64, 64)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0b3km")

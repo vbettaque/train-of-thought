@@ -26,18 +26,13 @@ position = Vector2(-2, -175)
 texture = ExtResource("1_ahsjn")
 centered = false
 
-[node name="TrainMiddle1Sprite" type="Sprite2D" parent="TrainBackground"]
+[node name="TrainMiddleSprite" type="Sprite2D" parent="TrainBackground"]
 position = Vector2(534, -175)
 texture = ExtResource("2_2ra86")
 centered = false
 
-[node name="TrainMiddle2Sprite" type="Sprite2D" parent="TrainBackground"]
-position = Vector2(2454, -175)
-texture = ExtResource("2_2ra86")
-centered = false
-
 [node name="TrainRightSprite" type="Sprite2D" parent="TrainBackground"]
-position = Vector2(4374, -175)
+position = Vector2(2454, -175)
 texture = ExtResource("3_r6bmr")
 centered = false
 
@@ -51,7 +46,7 @@ sprite_frames = ExtResource("4_7nehd")
 autoplay = "default"
 
 [node name="Wheels2" type="AnimatedSprite2D" parent="Wheels"]
-position = Vector2(4336, 76)
+position = Vector2(2416, 76)
 scale = Vector2(1.5, 1.5)
 sprite_frames = ExtResource("4_7nehd")
 autoplay = "default"
@@ -69,7 +64,7 @@ position = Vector2(94, 363)
 shape = SubResource("WorldBoundaryShape2D_0te51")
 
 [node name="RightCollision" type="CollisionShape2D" parent="TrainBoundary"]
-position = Vector2(4808, 363)
+position = Vector2(2888, 363)
 shape = SubResource("WorldBoundaryShape2D_qas1o")
 
 [node name="TopCollision" type="CollisionShape2D" parent="TrainBoundary"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://biye7olleue7b"]
+
+[ext_resource type="Script" path="res://entities/items/item_slot_control.gd" id="1_7x3is"]
+[ext_resource type="PackedScene" uid="uid://bedr454ypm213" path="res://entities/items/item_slot.tscn" id="2_4tht4"]
+
+[node name="ItemSlotControl" type="Control"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 1
+script = ExtResource("1_7x3is")
+
+[node name="ItemSlot" parent="." instance=ExtResource("2_4tht4")]
+position = Vector2(64, 64)

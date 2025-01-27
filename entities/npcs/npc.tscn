@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m72n0"]
-radius = 112.0
+radius = 192.0
 height = 384.0
 
 [node name="NPC" type="Area2D"]

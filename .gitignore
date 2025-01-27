@@ -8,5 +8,10 @@
 .godot/
 /android/
 
+# Godot Exports
+export
+export.zip
+
+
 #Recordings
 *.avi

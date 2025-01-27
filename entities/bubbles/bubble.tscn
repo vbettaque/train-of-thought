@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpwj2d387d104"]
 
 [ext_resource type="Theme" uid="uid://cwe4mg61nharw" path="res://assets/theme.tres" id="1_0nkj7"]
-[ext_resource type="PackedScene" uid="uid://biye7olleue7b" path="res://entities/items/item_slot.tscn" id="2_fa0is"]
+[ext_resource type="PackedScene" uid="uid://biye7olleue7b" path="res://entities/items/item_slot_control.tscn" id="2_fa0is"]
 
 [node name="Bubble" type="Polygon2D"]
 polygon = PackedVector2Array(0, 0, 776, 21, 750, 289, 627, 303, 649, 423, 500, 314, 16, 271)

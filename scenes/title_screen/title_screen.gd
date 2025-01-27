@@ -3,6 +3,8 @@ extends Control
 @export_file("*.tscn") var next_scene_path: String
 
 @onready var play_button: Button = $MarginContainer/CenterContainer/VBoxContainer/PlayButton
+@onready var title: TextureRect = $MarginContainer/CenterContainer/VBoxContainer/Title
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
